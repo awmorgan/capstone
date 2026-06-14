@@ -382,7 +382,7 @@ CFLAGS := $(CFLAGS:-fPIC=)
 # On Windows we need the shared library to be executable
 else
 # mingw?
-IS_MINGW := $(shell $(CC) --version 2>/dev/null | grep -i "\(mingw\|MSYS\)" | wc -l)
+IS_MINGW := $(shell $(CC) -dumpmachine 2>/dev/null | grep -i "\(mingw\|MSYS\|windows\)" | wc -l)
 ifeq ($(IS_MINGW),1)
 EXT = dll
 AR_EXT = lib
@@ -401,7 +401,7 @@ endif
 
 ifeq ($(CAPSTONE_SHARED),yes)
 ifeq ($(IS_MINGW),1)
-LIBRARY = $(BLDIR)/$(LIBNAME).$(VERSION_EXT)
+LIBRARY = $(BLDIR)/$(LIBNAME).$(EXT)
 else ifeq ($(IS_CYGWIN),1)
 LIBRARY = $(BLDIR)/$(LIBNAME).$(EXT)
 else	# *nix
