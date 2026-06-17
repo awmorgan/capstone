@@ -17,7 +17,7 @@ extern "C" {
 #include <stdio.h>
 #endif
 
-#include "platform.h"
+#include "platform.h" // IWYU pragma: keep
 
 #ifdef _MSC_VER
 #pragma warning(disable:4201)

@@ -17,7 +17,7 @@
 #include <capstone/capstone.h>
 
 #include "utils.h"
-#include "MCRegisterInfo.h"
+#include "MCRegisterInfo.h" // IWYU pragma: keep
 
 #if defined(_KERNEL_MODE)
 #include "windows\winkernel_mm.h"
