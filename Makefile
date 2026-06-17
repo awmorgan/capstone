@@ -58,7 +58,7 @@ ifneq ($(OS),OS/390)
 CFLAGS += -fPIC
 endif
 else
-CFLAGS += -fPIC -Wall -Wwrite-strings -Wmissing-prototypes -Iinclude
+CFLAGS += -fPIC -Wall -Wwrite-strings -Wmissing-prototypes -Wno-unused-function -Wno-unknown-pragmas -Iinclude
 endif
 
 ifeq ($(CAPSTONE_USE_SYS_DYN_MEM),yes)
@@ -608,7 +608,7 @@ endef
 endif
 
 ifeq ($(AR_FLAGS),)
-AR_FLAGS := q
+AR_FLAGS := cq
 endif
 
 define create-archive
