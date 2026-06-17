@@ -137,3 +137,4 @@ cstool/cstool
 android-ndk-*
 
 make.log
+compile_commands.json
