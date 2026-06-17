@@ -135,3 +135,5 @@ cstool/cstool
 
 # android
 android-ndk-*
+
+make.log
